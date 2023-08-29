@@ -10,15 +10,12 @@
     </parent>
 
     <groupId>org.springframework</groupId>
-    <artifactId>spring-01</artifactId>
+    <artifactId>spring-02</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-
-    </dependencies>
 
 </project>
