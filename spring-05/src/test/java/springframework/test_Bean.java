@@ -1,8 +1,9 @@
 package springframework;
+
 import org.junit.Test;
-import org.springframework.BeansException;
-import org.springframework.beans.factory.PropertyValue;
-import org.springframework.beans.factory.PropertyValues;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanReference;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -23,7 +24,7 @@ public class test_Bean {
 
 
         // UserService bean注入
-        BeanDefinition beanDefinition = new BeanDefinition(UserService.class,propertyValues);
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class, propertyValues);
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
         // 3.获取bean

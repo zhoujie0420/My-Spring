@@ -1,8 +1,8 @@
 package springframework;
 import org.junit.Test;
 import org.springframework.BeansException;
-import org.springframework.factory.config.BeanDefinition;
-import org.springframework.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 public class test_Bean {
     @Test
