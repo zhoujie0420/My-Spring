@@ -13,6 +13,7 @@
         <module>spring-02</module>
         <module>spring-03</module>
         <module>spring-04</module>
+        <module>spring-05</module>
     </modules>
 
     <properties>

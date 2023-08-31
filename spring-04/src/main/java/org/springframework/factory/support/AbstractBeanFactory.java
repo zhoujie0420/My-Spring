@@ -1,12 +1,16 @@
 package org.springframework.factory.support;
 
+
 import org.springframework.BeansException;
 import org.springframework.factory.BeanFactory;
 import org.springframework.factory.config.BeanDefinition;
 
+/**
+ * <p>
+ * BeanDefinition注册表接口
+ * @author jiezhou
+ */
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
-
-
 
     @Override
     public Object getBean(String name) throws BeansException {
@@ -28,9 +32,8 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         return (T) createBean(name, beanDefinition, args);
     }
 
-
     protected abstract BeanDefinition getBeanDefinition(String beanName) throws BeansException;
-    protected abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args)throws BeansException;
 
+    protected abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException;
 
 }

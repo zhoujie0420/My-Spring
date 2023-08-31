@@ -1,19 +1,25 @@
 package springframework;
 
 public class UserService {
-    private String name;
+    private String uid;
 
-    public UserService(String username) {
-        this.name = username;
-    }
-
-    public String toSting() {
-        StringBuilder sb = new StringBuilder("");
-        sb.append("").append(name);
-        return sb.toString();
-    }
-
+    private UserDao userDao;
     public void queryUserInfo() {
-        System.out.println("查询用户信息" + name);
+        System.out.println("查询用户信息：" + userDao.queryUserName(uid));
+    }
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public UserDao getUserDao() {
+        return userDao;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 }
