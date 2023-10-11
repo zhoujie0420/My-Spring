@@ -1,13 +1,12 @@
 package org.springframework.beans.factory.config;
 
-
 /**
- * @author jiezhou
- * <p>
- * bean 的引用
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
+ *
+ * Bean 的引用
  */
-
 public class BeanReference {
+
     private final String beanName;
 
     public BeanReference(String beanName) {
@@ -15,6 +14,7 @@ public class BeanReference {
     }
 
     public String getBeanName() {
-        return this.beanName;
+        return beanName;
     }
+
 }

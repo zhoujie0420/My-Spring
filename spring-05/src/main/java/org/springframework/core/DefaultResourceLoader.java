@@ -1,6 +1,7 @@
 package org.springframework.core;
 
-import cn.hutool.core.lang.Assert;
+
+import org.springframework.util.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;

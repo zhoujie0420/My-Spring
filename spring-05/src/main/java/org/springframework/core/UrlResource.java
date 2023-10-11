@@ -1,6 +1,6 @@
 package org.springframework.core;
 
-import cn.hutool.core.lang.Assert;
+import org.springframework.util.Assert;
 
 import java.io.IOException;
 import java.io.InputStream;

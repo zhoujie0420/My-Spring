@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author jiezhou
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
  */
 public class PropertyValues {
 
@@ -26,4 +26,5 @@ public class PropertyValues {
         }
         return null;
     }
+
 }

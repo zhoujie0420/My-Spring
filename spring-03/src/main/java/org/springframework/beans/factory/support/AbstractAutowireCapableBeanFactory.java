@@ -3,6 +3,8 @@ package org.springframework.beans.factory.support;
 import org.springframework.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 
+import javax.xml.bind.PrintConversionEvent;
+import java.io.PipedReader;
 import java.lang.reflect.Constructor;
 
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
@@ -28,13 +30,23 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         Constructor<?>[] declaredConstructors = beanClass.getDeclaredConstructors();
         for (Constructor ctor : declaredConstructors) {
             if (null != args && ctor.getParameterTypes().length == args.length) {
-                constructorToUse = ctor;
-                break;
+                if(checkType(ctor.getParameterTypes(), args)) {
+                    constructorToUse = ctor;
+                    break;
+                }
             }
         }
         return getInstantiationStrategy().instantiate(beanDefinition, beanName, constructorToUse, args);
     }
 
+    private boolean checkType(Class<?>[] parameterTypes, Object[] args) {
+        for (int i = 0; i < parameterTypes.length; i++) {
+            if (!parameterTypes[i].isInstance(args[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
     public InstantiationStrategy getInstantiationStrategy() {
         return instantiationStrategy;
     }

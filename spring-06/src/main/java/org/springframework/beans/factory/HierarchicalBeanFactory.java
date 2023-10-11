@@ -1,4 +1,8 @@
 package org.springframework.beans.factory;
 
-public class HierarchicalBeanFactory {
+/**
+ * Sub-interface implemented by bean factories that can be part
+ * of a hierarchy.
+ */
+public interface    HierarchicalBeanFactory extends BeanFactory {
 }

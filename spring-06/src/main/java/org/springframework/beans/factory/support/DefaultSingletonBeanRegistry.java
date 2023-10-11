@@ -1,14 +1,16 @@
 package org.springframework.beans.factory.support;
 
+
 import org.springframework.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author jiezhou
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
+
     private Map<String, Object> singletonObjects = new HashMap<>();
 
     @Override
@@ -19,4 +21,5 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
     protected void addSingleton(String beanName, Object singletonObject) {
         singletonObjects.put(beanName, singletonObject);
     }
+
 }

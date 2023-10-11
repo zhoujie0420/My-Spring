@@ -1,12 +1,15 @@
 package org.springframework.beans.factory.config;
 
+
 import org.springframework.beans.PropertyValues;
 
 /**
- * @author jiezhou
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
  */
 public class BeanDefinition {
+
     private Class beanClass;
+
     private PropertyValues propertyValues;
 
     public BeanDefinition(Class beanClass) {
@@ -27,7 +30,7 @@ public class BeanDefinition {
         return propertyValues;
     }
 
-    public void setBeanClass(Class beanClass) {
-        this.beanClass = beanClass;
+    public void setPropertyValues(PropertyValues propertyValues) {
+        this.propertyValues = propertyValues;
     }
 }

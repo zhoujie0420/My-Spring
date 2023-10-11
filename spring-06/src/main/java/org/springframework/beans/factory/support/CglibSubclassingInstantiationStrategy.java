@@ -1,13 +1,14 @@
 package org.springframework.beans.factory.support;
 
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.NoOp;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.cglib.proxy.Enhancer;
-import org.springframework.cglib.proxy.NoOp;
 
 import java.lang.reflect.Constructor;
 
 public class CglibSubclassingInstantiationStrategy implements InstantiationStrategy {
+
     @Override
     public Object instantiate(BeanDefinition beanDefinition, String beanName, Constructor ctor, Object[] args) throws BeansException {
         Enhancer enhancer = new Enhancer();
@@ -18,9 +19,7 @@ public class CglibSubclassingInstantiationStrategy implements InstantiationStrat
                 return super.hashCode();
             }
         });
-        if (null == ctor) {
-            return enhancer.create();
-        }
+        if (null == ctor) return enhancer.create();
         return enhancer.create(ctor.getParameterTypes(), args);
     }
 

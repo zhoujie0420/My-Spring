@@ -1,7 +1,9 @@
 package org.springframework.beans;
 
 /**
- * @author jiezhou
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
+ *
+ * bean 属性信息
  */
 public class PropertyValue {
 
@@ -21,4 +23,5 @@ public class PropertyValue {
     public Object getValue() {
         return value;
     }
+
 }

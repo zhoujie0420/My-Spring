@@ -1,11 +1,16 @@
 package org.springframework.beans;
 
-public class BeansException extends Throwable {
-    public BeansException(String s) {
-        super(s);
+/**
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
+ */
+public class BeansException extends RuntimeException {
+
+    public BeansException(String msg) {
+        super(msg);
     }
 
-    public BeansException(String s, Exception e) {
-        super(s, e);
+    public BeansException(String msg, Throwable cause) {
+        super(msg, cause);
     }
+
 }

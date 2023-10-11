@@ -1,13 +1,17 @@
 package org.springframework.beans.factory;
 
+
 import org.springframework.beans.BeansException;
 
 /**
- * @author jiezhou
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
  */
 public interface BeanFactory {
+
     Object getBean(String name) throws BeansException;
 
-    // 重载一个含有入参信息的args的getBean 方法   ，方便传递入参给构造函数实例化了
     Object getBean(String name, Object... args) throws BeansException;
+
+    <T> T getBean(String name, Class<T> requiredType) throws BeansException;
+
 }
